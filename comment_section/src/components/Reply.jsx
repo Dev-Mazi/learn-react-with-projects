@@ -1,10 +1,26 @@
+import { useState } from "react";
+
 function Reply() {
+  const [voteCount, setVoteCount] = useState(0);
+
+  function handleUpvote() {
+    setVoteCount(voteCount + 1);
+  }
+
+  function handleDownVote() {
+    if (voteCount > 0) setVoteCount(voteCount - 1);
+  }
+
   return (
     <div className="comment-reply-container">
       <div className="comment-vote-container">
-        <span className="vote-cta">+</span>
-        <span className="vote-counter-text">12</span>
-        <span className="vote-cta">-</span>
+        <span className="vote-cta" onClick={handleUpvote}>
+          +
+        </span>
+        <span className="vote-counter-text">{voteCount}</span>
+        <span className="vote-cta" onClick={handleDownVote}>
+          -
+        </span>
       </div>
       <div className="comment-content-container">
         <div className="comment-header">
