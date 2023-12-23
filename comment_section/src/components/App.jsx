@@ -8,21 +8,25 @@ import MyReply from "./MyReply";
 function App() {
   return (
     <div className="bg">
-      <div className="container">
-        <div className="comment-box">
-          <Comments />
-          <Comments />
-          <div className="reply-box">
-            <div className="stroke"></div>
-            <div className="replies">
-              <Reply />
-              <Reply />
-              <MyReply />
+      <>
+        <div className="comment-container">
+          <div className="comment-box">
+            <Comments />
+            <Comments />
+            <div className="reply-box">
+              <div className="stroke"></div>
+              <div className="replies">
+                <Reply />
+                <Reply />
+                <MyReply />
+              </div>
             </div>
           </div>
         </div>
-        <Form />
-      </div>
+        <div className="fixed-input">
+          <Form />
+        </div>
+      </>
     </div>
   );
 }

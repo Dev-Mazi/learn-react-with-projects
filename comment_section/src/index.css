@@ -12,7 +12,7 @@ body {
 
 .bg {
   display: inline-flex;
-  padding: 88px 310px 88px 309px;
+  padding: 88px 310px 300px 309px;
   justify-content: center;
   align-items: center;
   background: #050505;
@@ -25,12 +25,13 @@ body {
   flex-direction: column;
   align-items: flex-start;
   gap: 85px;
-  width: 65%;
+
   height: 100%;
 }
 
-.comments-scroll-container {
+.comment-container {
   height: 100%;
+  width: 65%;
 }
 
 /* Individual Comment Styling */
@@ -272,20 +273,23 @@ img {
 .comment-input-container {
   display: flex;
   width: 100%;
+  height: 150px;
   padding: 28px 36px;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 24px;
 
   border-radius: 12px;
   background: #101010;
+  box-shadow: 0px 0px 100px 100px rgba(61, 61, 61, 0.15);
 }
 
 .fixed-input {
   position: fixed; /* Fix the input box */
   bottom: 0;
+  width: 44%;
 
-  width: 100%;
+  padding-bottom: 20px;
 }
 
 .input-header {
@@ -294,19 +298,38 @@ img {
   align-items: flex-start;
   gap: 16px;
   flex: 1 0 0;
+  height: 100%;
 }
 
 .input-field {
   display: flex;
-  height: 95px;
-  padding: 16px;
-  align-items: flex-start;
-  gap: 10px;
-  flex: 1 0 0;
+  height: 100%;
+  width: 100%;
 
+  align-items: flex-start;
+  /* gap: 10px;
+  flex: 1 0 0;  */
+}
+
+.custom-input {
+  width: 100%;
+  height: 100%; /* Set a minimum height */
+  resize: none; /* Allow vertical resizing */
+  overflow-y: auto; /* Enable vertical scrolling */
   border-radius: 8px;
   border: 1px solid #4e4e4e;
   background: #050505;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  /* Text wrapping behavior */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.input-field textarea:focus {
+  outline: none;
+  border: 0.8px solid hsl(151, 100%, 83%);
 }
 
 .default-input-text {

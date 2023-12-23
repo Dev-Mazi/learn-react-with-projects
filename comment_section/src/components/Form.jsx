@@ -5,7 +5,13 @@ function Form() {
         <div className="img-container">
           <img src="./Public/Avatars/Alex.png" alt="" />
         </div>
-        <input type="text" className="input-field" placeholder="Add Comment" />
+        <div className="input-field">
+          <textarea
+            type="text"
+            className="custom-input"
+            placeholder="Add Comment"
+          />
+        </div>
       </div>
       <button className="send-cta">
         <span className="cta-text">Send</span>
