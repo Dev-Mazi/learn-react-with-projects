@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function Comments() {
+function Comments({ text, username, image, time }) {
   const [voteCount, setVoteCount] = useState(0);
 
   function handleUpvote() {
@@ -27,11 +28,11 @@ function Comments() {
           <div className="comment-info-container">
             <div className="comment-author-info">
               <div className="img-container">
-                <img src="./Public/Avatars/Alex.png" alt="" />
+                <img src={image} alt="" />
               </div>
-              <p className="author">officialmazii</p>
+              <p className="author">{username}</p>
             </div>
-            <p className="time">2 months ago</p>
+            <p className="time">{time}</p>
           </div>
           <div className="reply-container">
             <img className="reply-icon" src="./Public/icon-reply.svg" alt="" />
@@ -39,12 +40,7 @@ function Comments() {
           </div>
         </div>
 
-        <p className="comment-detail">
-          The insights presented in this article are truly enlightening! The
-          author has done an excellent job of breaking down complex concepts
-          into easily digestible points. I particularly appreciated the section
-          on practical applications.
-        </p>
+        <p className="comment-detail">{text}</p>
       </div>
     </div>
   );

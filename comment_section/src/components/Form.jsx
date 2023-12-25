@@ -1,4 +1,6 @@
 function Form() {
+  // const [description, setDescription] = useState("");
+
   return (
     <div className="comment-input-container">
       <div className="input-header">
