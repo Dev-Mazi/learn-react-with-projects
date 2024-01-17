@@ -27,8 +27,10 @@ function App() {
       replies: [
         {
           id: 301,
-          text: "Why do you think so?",
-          author: "Eva Martinez",
+          text: "I agree! Ethical considerations are crucial, especially in emerging technologies. What specific ethical aspects would you recommend exploring further?",
+          author: "evamartinez",
+          image: "./Public/Avatars/Sarah.png",
+          time: "3 minutes ago",
           upvotes: 2,
           downvotes: 0,
         },
@@ -43,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <CommentPage commentData={comments} deleteComment={deleteComment} />
+      <CommentPage comments={comments} deleteComment={deleteComment} />
     </div>
   );
 }

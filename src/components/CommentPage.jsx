@@ -4,28 +4,40 @@ import Reply from "./Reply";
 import Form from "./Form";
 import MyReply from "./MyReply";
 
-function CommentPage({ commentData }) {
+function CommentPage({ comments }) {
   return (
     <div className="bg">
       <>
         <div className="comment-container">
           <div className="comment-box">
-            {commentData.map((el) => (
+            {comments.map((comment) => (
               <Comments
-                key={el.id}
-                text={el.text}
-                username={el.author}
-                image={el.image}
-                time={el.time}
+                key={comment.id}
+                text={comment.text}
+                author={comment.author}
+                image={comment.image}
+                time={comment.time}
+                replies={comment.replies}
+                renderReplies={(replies, parentUsername) => (
+                  <div className="reply-box">
+                    <div className="stroke"></div>
+                    <div className="replies">
+                      {replies.map((reply) => (
+                        <Reply
+                          key={reply.id}
+                          reply={reply.text}
+                          username={reply.author}
+                          image={reply.image}
+                          time={reply.time}
+                          parentUsername={parentUsername}
+                        />
+                      ))}
+                      <MyReply />
+                    </div>
+                  </div>
+                )}
               />
             ))}
-            <div className="reply-box">
-              <div className="stroke"></div>
-              <div className="replies">
-                <Reply />
-                <MyReply />
-              </div>
-            </div>
           </div>
         </div>
         <div className="fixed-input">
